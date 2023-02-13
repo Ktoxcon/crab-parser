@@ -1,3 +1,26 @@
+use std::env;
+
+pub mod file_utils;
+pub mod lexer;
+pub mod lexer_result;
+pub mod symbols;
+pub mod token;
+pub mod types;
+
+use lexer::Lexer;
+
 fn main() {
-    println!("Hello, world!");
+    let file_path = env::args().nth(1);
+
+    if file_path == None {
+        panic!("A path is required to parse");
+    }
+
+    let file_path = file_path.unwrap();
+
+    let file_content = file_utils::get_file_content(file_path);
+
+    let lexer_result = Lexer::new(file_content.unwrap());
+
+    println!("{:?}", lexer_result);
 }
