@@ -1,13 +1,23 @@
-enum Boolean {
-    True,
-    False,
+#[derive(Debug)]
+pub enum NumericValue<T> {
+    NumberValue(T),
 }
 
-enum JsonValue {
-    Array,
-    Boolean,
+#[derive(Debug)]
+pub enum LiteralValues {
     Null,
-    Number,
+    Boolean(bool),
+}
+
+pub enum ComplexValues {
+    Array,
     Object,
-    String,
+    NumericValue,
+    StringValue(String),
+}
+
+#[derive(Debug, Clone)]
+pub enum JsonValue {
+    LiteralValues,
+    ComplexValues,
 }
