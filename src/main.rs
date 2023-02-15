@@ -20,7 +20,9 @@ fn main() {
 
     let file_content = file_utils::get_file_content(file_path);
 
-    let lexer_result = Lexer::new(file_content.unwrap());
+    let lexer_result_tokens = Lexer::new(file_content.unwrap()).lex().tokens;
 
-    println!("{:?}", lexer_result);
+    for token in lexer_result_tokens {
+        println!("{:?}", token);
+    }
 }

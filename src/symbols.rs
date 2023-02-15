@@ -1,5 +1,5 @@
-#[derive(Debug)]
-pub enum JsonSymbols {
+#[derive(Debug, Clone)]
+pub enum JsonSymbol {
     LeftSquareBracket,
     RightSquareBracket,
     LeftCurlyBracket,
@@ -7,4 +7,5 @@ pub enum JsonSymbols {
     Colon,
     Coma,
     DoubleQuote,
+    Literal(String),
 }

@@ -2,7 +2,7 @@ use crate::token::Token;
 
 #[derive(Debug)]
 pub struct LexerResult {
-    tokens: Vec<Token>,
+    pub tokens: Vec<Token>,
 }
 
 impl LexerResult {

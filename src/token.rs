@@ -1,7 +1,7 @@
-use crate::types::JsonValue;
+use crate::symbols::JsonSymbol;
 
 #[derive(Debug, Clone)]
 pub struct Token {
-    children: Option<JsonValue>,
-    token_type: JsonValue,
+    pub token_type: JsonSymbol,
+    pub token_index: usize,
 }
